@@ -31,7 +31,7 @@ def getScreenPos(pos, camdata):
     posZ = (math_cos(camdata[1][1])*(pos[2]-camdata[0][2]))+(math_sin(camdata[1][1])*(pos[0]-camdata[0][0]))
     posY = -((math_cos(camdata[1][0])*(pos[1]-camdata[0][1]))-(math_sin(camdata[1][0])*posZ))
     posZ = (math_cos(camdata[1][0])*posZ)+(math_sin(camdata[1][0])*(pos[1]-camdata[0][1]))
-    if posZ > 0 and posX/posZ > -(width/height) and posX/posZ < (width/height) and posY/posZ > -(height/width) and posY/posZ < (height/width):
+    if posZ > 0 and posX/posZ > -(width/height) and posX/posZ < (width/height) and posY/posZ > -1 and posY/posZ < 1:
         return [(width/2)+((posX/posZ)*(height/2)),(height/2)+((posY/posZ)*(height/2))]
     else:
         return None
